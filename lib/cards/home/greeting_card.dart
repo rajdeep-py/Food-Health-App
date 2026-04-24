@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import '../../models/insights.dart';
+import '../../models/home/insights.dart';
 import '../../models/user.dart';
 
 class GreetingCard extends StatelessWidget {

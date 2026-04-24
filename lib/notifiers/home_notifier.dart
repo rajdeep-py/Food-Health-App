@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import '../models/insights.dart';
-import '../models/plans.dart';
-import '../models/recommendations.dart';
-import '../models/streaks.dart';
+import '../models/home/insights.dart';
+import '../models/home/plans.dart';
+import '../models/home/recommendations.dart';
+import '../models/home/streaks.dart';
 
 class HomeState {
   final DailyInsight? insight;

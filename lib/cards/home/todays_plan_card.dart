@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import '../../models/plans.dart';
+import '../../models/home/plans.dart';
 
 class TodaysPlanCard extends StatelessWidget {
   final List<MealPlan> meals;

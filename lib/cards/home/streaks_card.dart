@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import '../../models/streaks.dart';
+import '../../models/home/streaks.dart';
 
 class StreaksCard extends StatelessWidget {
   final StreakData streaks;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../models/insights.dart';
+import '../../models/home/insights.dart';
 
 class DailySummaryCard extends StatelessWidget {
   final DailyInsight insight;

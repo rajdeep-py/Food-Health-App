@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../providers/home_provider.dart';
 import '../theme/app_theme.dart';
 import '../cards/home/greeting_card.dart';
@@ -39,7 +40,9 @@ class HomeScreen extends ConsumerWidget {
       bottomNavigationBar: ModernBottomNavBar(
         currentIndex: 0,
         onTap: (index) {
-          // Future: Implement tab navigation
+          if (index == 1) {
+            context.go('/insights');
+          }
         },
       ),
       body: SafeArea(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import '../../models/recommendations.dart';
+import '../../models/home/recommendations.dart';
 
 class SmartRecommendationsCard extends StatelessWidget {
   final List<SmartRecommendation> recommendations;
