@@ -28,11 +28,10 @@ class InsightsScreen extends ConsumerWidget {
         showBackButton: false,
       ),
       bottomNavigationBar: ModernBottomNavBar(
-        currentIndex: 1, // Insights tab
+        currentIndex: 1,
         onTap: (index) {
-          if (index == 0) {
-            context.go('/home');
-          }
+          if (index == 0) context.go('/home');
+          if (index == 2) context.push('/scanner');
         },
       ),
       body: SafeArea(

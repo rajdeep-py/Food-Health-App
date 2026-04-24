@@ -40,9 +40,8 @@ class HomeScreen extends ConsumerWidget {
       bottomNavigationBar: ModernBottomNavBar(
         currentIndex: 0,
         onTap: (index) {
-          if (index == 1) {
-            context.go('/insights');
-          }
+          if (index == 1) context.go('/insights');
+          if (index == 2) context.push('/scanner');
         },
       ),
       body: SafeArea(

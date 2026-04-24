@@ -5,6 +5,7 @@ import '../screens/login_screen.dart';
 import '../screens/signup_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/insights_screen.dart';
+import '../screens/scanner_screen.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -20,6 +21,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/insights',
         builder: (context, state) => const InsightsScreen(),
+      ),
+      GoRoute(
+        path: '/scanner',
+        builder: (context, state) => const ScannerScreen(),
       ),
     ],
   );
