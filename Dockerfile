@@ -1,0 +1,31 @@
+# ── Stage 1: Build Flutter Web ──────────────────────────────────────────────
+FROM ghcr.io/cirruslabs/flutter:stable AS builder
+
+WORKDIR /app
+
+# Copy dependency manifests first for layer caching
+COPY pubspec.yaml pubspec.lock ./
+RUN flutter pub get
+
+# Copy the rest of the source
+COPY . .
+
+# Build Flutter web (release, with canvaskit renderer for best fidelity)
+RUN flutter build web --release --web-renderer canvaskit
+
+# ── Stage 2: Serve with nginx ─────────────────────────────────────────────────
+FROM nginx:alpine AS runner
+
+# Remove default nginx static assets
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy compiled Flutter web output
+COPY --from=builder /app/build/web /usr/share/nginx/html
+
+# Copy custom nginx config (SPA routing support)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Cloud Run requires the container to listen on port 8080
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
