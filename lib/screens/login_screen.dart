@@ -49,11 +49,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     // Listen to auth changes to navigate after login
     ref.listen<AuthState>(authProvider, (previous, next) {
       if (next.status == AuthStatus.authenticated) {
-        // We'd navigate to home screen here usually.
-        // For now, we will just show a snackbar.
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text('Login Successful')));
+        context.go('/home');
       } else if (next.status == AuthStatus.error && next.errorMessage != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
