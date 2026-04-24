@@ -2,28 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Premium Color Palette
-  static const Color background = Color(0xFF0F172A); // Slate 900
-  static const Color surface = Color(0xFF1E293B); // Slate 800
-  static const Color surfaceLight = Color(0xFF334155); // Slate 700
+  // Premium Light Color Palette
+  static const Color background = Colors.white;
+  static const Color surface = Color(0xFFF8FAFC); // Slate 50
+  static const Color surfaceContainerHigh = Color(0xFFF1F5F9); // Slate 100
   static const Color primary = Color(
     0xFF10B981,
   ); // Emerald 500 (Health/Food vibe)
   static const Color primaryVariant = Color(0xFF059669); // Emerald 600
   static const Color secondary = Color(0xFFF59E0B); // Amber 500
-  static const Color textPrimary = Color(0xFFF8FAFC); // Slate 50
-  static const Color textSecondary = Color(0xFF94A3B8); // Slate 400
+  static const Color textPrimary = Color(0xFF0F172A); // Slate 900
+  static const Color textSecondary = Color(0xFF64748B); // Slate 500
   static const Color error = Color(0xFFEF4444); // Red 500
 
-  static ThemeData get darkTheme {
+  static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
       scaffoldBackgroundColor: background,
-      colorScheme: const ColorScheme.dark(
+      colorScheme: const ColorScheme.light(
         primary: primary,
         secondary: secondary,
         surface: surface,
+        surfaceContainerHigh: surfaceContainerHigh,
         error: error,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
@@ -102,7 +103,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: surface,
+        fillColor: surfaceContainerHigh,
         hintStyle: GoogleFonts.inter(color: textSecondary, fontSize: 14),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 20,
@@ -150,6 +151,13 @@ class AppTheme {
           color: textPrimary,
         ),
         iconTheme: const IconThemeData(color: textPrimary),
+      ),
+      sliderTheme: SliderThemeData(
+        activeTrackColor: primary,
+        inactiveTrackColor: surfaceContainerHigh,
+        thumbColor: Colors.white,
+        overlayColor: primary.withValues(alpha: 0.2),
+        valueIndicatorTextStyle: GoogleFonts.inter(color: Colors.white),
       ),
     );
   }

@@ -17,7 +17,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'NutriCore',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme, // Premium dark theme by default
+      theme: AppTheme.lightTheme, // Premium light theme by default
       routerConfig: goRouter,
     );
   }
